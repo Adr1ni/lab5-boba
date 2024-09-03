@@ -1,0 +1,8 @@
+IPython
+argparse
+bytewax
+geopy
+requests
+river
+scipy
+kafka-python
