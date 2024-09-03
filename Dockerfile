@@ -6,4 +6,4 @@ COPY . /app
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD python hello_ipython.py && python hello_requests.py && python hello_geopy.py && hello_argparse.py && hello_re.py && hello_river.py && hello_scipy.py
+CMD python hello_ipython.py && python hello_requests.py && python hello_geopy.py && python hello_argparse.py && python hello_re.py && python hello_river.py && python hello_scipy.py
