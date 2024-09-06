@@ -16,6 +16,9 @@ build_and_run_container() {
 
   echo "Running Docker..."
   docker run --rm hola-mundo-multiple
+
+  cd kafka
+  docker compose up -d
 }
 
 clone_repository

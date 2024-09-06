@@ -1,11 +1,19 @@
-from kafka.admin import KafkaAdminClient, NewTopic
+from confluent_kafka import Producer
+import socket
+# from fastapi import FastAPI
 
-admin_client = KafkaAdminClient(
-    bootstrap_servers="kafka:9092",
-    client_id='hola_mundo_kafka'
-)
+# app = FastAPI()
 
-topic_list = [NewTopic(name="hola_mundo_topic", num_partitions=1, replication_factor=1)]
-admin_client.create_topics(new_topics=topic_list, validate_only=False)
+# Define the key variable
+key = "some_key_value"
 
-print("Hola Mundo desde Kafka! Tópico creado.")
+# Configuration for Kafka producer
+conf = {'bootstrap.servers': "localhost:9092"}
+
+# Create a producer instance
+producer = Producer(conf)
+
+producer.produce('my-topic', key=key, value=key)
+producer.flush()  # Ensure the message is sent before exiting
+print("Conectado al tópico 'my-topic' en Kafka!")
+
